@@ -1,152 +1,78 @@
-# 🗂️ Project Manager App
+# Project Management App 🗂️
 
-This is a **full-stack Project Management application** developed as a final project for the Coding Factory.  
-It supports **JWT authentication**, **MongoDB-based CRUD operations**, and a fully responsive **Angular frontend** with Bootstrap.
+A full-stack project for managing projects. Developed as the final assignment for Coding Factory.
 
----
+## 🔧 Tech Stack
 
-## 🛠️ Tech Stack
+- **Frontend:** Angular (Standalone components), Bootstrap 5
+- **Backend:** Node.js, Express, MongoDB, Mongoose
+- **Authentication:** JWT (Token-based), BCrypt
 
-### Backend
-- Node.js
-- Express
-- MongoDB + Mongoose
-- JWT Authentication
-- Winston Logger
-- Dotenv for environment configs
+## 📦 Features
 
-### Frontend
-- Angular (Standalone Components)
-- Bootstrap 5
-- Angular Router
-- LocalStorage for token storage
+### ✅ Authentication
+- Secure Login with hashed passwords
+- JWT token issued and stored in browser
+- AuthGuard-protected routes (Angular)
 
----
+### ✅ Project CRUD
+- Create, View, Update, Delete Projects
+- Each project is linked to the logged-in user
+- Inline editing and real-time updates
 
-## 🔐 Features
+### ✅ Frontend
+- Angular SPA using standalone components
+- Bootstrap UI (responsive)
+- Protected routes, navigation with role-based view
+- LocalStorage for token management
 
-- ✅ User login with JWT token
-- ✅ Protected routes (`/projects`) using Angular AuthGuard
-- ✅ Create, Read, Update, Delete Projects
-- ✅ Responsive UI with Bootstrap
-- ✅ Role-based Navbar (Login/Register for guests, Projects/Logout for authenticated)
-- ✅ Form validation and real-time updates
+### ✅ Backend
+- RESTful API with full CRUD support
+- Express routing + Mongoose models
+- Token verification middleware (`auth.middleware.js`)
+- Validation and error handling
 
----
+## 🔐 Access Control
 
-## 📁 Folder Structure
-
-### Backend
-
-```
-projectmanager/
-│
-├── config/
-│   └── db.js
-├── controllers/
-│   └── project.controller.js
-├── middlewares/
-│   └── auth.middleware.js
-├── models/
-│   └── project.model.js
-├── routes/
-│   └── project.routes.js
-├── services/
-│   └── project.service.js
-├── logs/
-│   └── combined.log
-├── .env
-├── server.js
-```
-
-### Frontend
-
-```
-projectmanager-frontend/
-│
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   └── projects/
-│   │   ├── services/
-│   │   ├── guards/
-│   │   └── auth/
-│   ├── assets/
-│   ├── index.html
-│   └── main.ts
-├── angular.json
-```
-
----
+All project data is tied to the authenticated user. Only the owner can access, update, or delete their projects.
 
 ## 🚀 Getting Started
 
-### 🧩 Backend Setup
+### 1. Backend
+```bash
+cd backend
+npm install
+cp .env   # Add JWT_SECRET and Mongo URI
+npm run dev
+```
 
-1. Navigate to the backend folder:
-   ```bash
-   cd projectmanager
-   ```
+### 2. Frontend
+```bash
+cd frontend
+npm install
+ng serve
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## 🧪 Testing
 
-3. Create a `.env` file:
-   ```
-   PORT=5000
-   MONGO_URI=mongodb://localhost:27017/projectdb
-   JWT_SECRET=your_jwt_secret
-   ```
+Tested with Postman (backend) and browser (frontend). Errors and edge cases handled (e.g., invalid login, empty project title, etc.)
 
-4. Run server:
-   ```bash
-   npm run dev
-   ```
+## 📁 Folder Structure
 
----
+```
+backend/
+  └── controllers/
+  └── models/
+  └── routes/
+  └── middleware/
+frontend/
+  └── app/
+      └── components/
+      └── services/
+      └── guards/
+```
 
-### 💻 Frontend Setup
+## 👨‍🎓 Project Author
 
-1. Navigate to frontend folder:
-   ```bash
-   cd projectmanager-frontend
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Run the Angular app:
-   ```bash
-   ng serve
-   ```
-
-4. Visit `http://localhost:4200`
-
----
-
-## 📌 Notes
-
-- The `/projects` route is protected — login is required.
-- JWT is stored in browser localStorage.
-- Invalid or expired tokens will redirect to login automatically.
-- Code uses TypeScript best practices and Angular standalone components.
-
----
-
-## 📅 Final Submission
-
-- Author: Dimitris Anagnostopoulos
-- Submitted for: Coding Factory Final Project
-- Date: 2025-07-16
-
----
-
-## ✅ Status
-
-> All features complete and tested successfully ✔️  
-> Ready for GitHub deployment and final grading.
-
+Created by **Dimitris Anagnostopoulos**  
+Coding Factory – Final Full-Stack Project

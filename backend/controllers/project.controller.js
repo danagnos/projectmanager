@@ -15,7 +15,7 @@ exports.updateProject = async (req, res) => {
     const { id } = req.params;
     const project = await Project.findOneAndUpdate(
         { _id: id, owner: req.user.id },
-        req.body,
+        { title, description },
         { new: true }
     );
     res.json(project);
