@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <h2>Projects</h2>
+
+  <button class="btn btn-primary" (click)="showCreateForm = !showCreateForm">
+    {{ showCreateForm ? 'Cancel' : 'New Project' }}
+  </button>
+
+  <form *ngIf="showCreateForm" (ngSubmit)="createProject()" class="mt-3">
+    <div class="mb-3">
+      <input type="text" [(ngModel)]="newProject.title" name="title" class="form-control" placeholder="Project Title" required />
+    </div>
+    <div class="mb-3">
+      <textarea [(ngModel)]="newProject.description" name="description" class="form-control" placeholder="Project Description" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+  </form>
+
+  <div *ngIf="loading" class="alert alert-info mt-3">
+    Loading projects...
+  </div>
+
+  <div *ngIf="projects.length > 0; else noProjects" class="mt-4">
+    <div class="card mb-3" *ngFor="let project of projects">
+      <div class="card-body">
+        <div *ngIf="editProject && editProject._id === project._id; else displayProject">
+          <input [(ngModel)]="editProject.title" class="form-control mb-2" />
+          <textarea [(ngModel)]="editProject.description" class="form-control mb-2"></textarea>
+          <button class="btn btn-success btn-sm me-2" (click)="updateProject()">Save</button>
+          <button class="btn btn-secondary btn-sm" (click)="editProject = null">Cancel</button>
+        </div>
+
+        <ng-template #displayProject>
+          <h5 class="card-title">{{ project.title }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+          <button class="btn btn-primary btn-sm me-2" (click)="selectProject(project)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteProject(project._id)">Delete</button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noProjects>
+    <div class="alert alert-warning mt-3">
+      No projects found.
+    </div>
+  </ng-template>
+</div>
