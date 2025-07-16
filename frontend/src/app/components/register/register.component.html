@@ -1,20 +1,25 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <div class="card shadow">
-        <div class="card-body">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
           <h2 class="text-center mb-4">Create Account</h2>
-          <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+          <form (ngSubmit)="onSubmit()" #registerForm="ngForm" novalidate>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
               <input
                 type="email"
                 class="form-control"
                 id="email"
-                [(ngModel)]="email"
                 name="email"
+                [(ngModel)]="email"
                 required
+                email
+                #emailRef="ngModel"
               />
+              <div *ngIf="emailRef.invalid && emailRef.touched" class="text-danger small mt-1">
+                Valid email is required.
+              </div>
             </div>
 
             <div class="mb-3">
@@ -23,23 +28,28 @@
                 type="password"
                 class="form-control"
                 id="password"
-                [(ngModel)]="password"
                 name="password"
+                [(ngModel)]="password"
                 required
+                minlength="6"
+                #passwordRef="ngModel"
               />
+              <div *ngIf="passwordRef.invalid && passwordRef.touched" class="text-danger small mt-1">
+                Password must be at least 6 characters.
+              </div>
             </div>
 
-            <div *ngIf="error" class="alert alert-danger mt-3">
+            <div *ngIf="error" class="alert alert-danger mt-3 py-2">
               {{ error }}
             </div>
 
             <div class="d-grid gap-2 mt-4">
-              <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid">
+              <button type="submit" class="btn btn-success" [disabled]="registerForm.invalid">
                 Register
               </button>
             </div>
 
-            <div class="text-center mt-3">
+            <div class="text-center mt-3 small">
               Already have an account?
               <a routerLink="/login">Login here</a>
             </div>

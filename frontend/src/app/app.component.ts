@@ -11,9 +11,6 @@ import {NgIf} from '@angular/common';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title(title: any) {
-      throw new Error('Method not implemented.');
-  }
   constructor(public authService: AuthService) {}
 
   isLoggedIn(): boolean {

@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7c0794d6-1a2f-4535-8b4e-27518b679e83" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controllers/project.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/project.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/utils/generateToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/utils/generateToken.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +65,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dimit\WebstormProjects\projectmanager" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dimit\WebstormProjects\projectmanager\frontend\src\app\components\about" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -84,7 +91,7 @@
       <workItem from="1752506914548" duration="2168000" />
       <workItem from="1752509997986" duration="92000" />
       <workItem from="1752681314446" duration="3153000" />
-      <workItem from="1752699258093" duration="753000" />
+      <workItem from="1752699258093" duration="5054000" />
     </task>
     <servers />
   </component>
