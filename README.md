@@ -2,6 +2,10 @@
 
 A full-stack project for managing projects. Developed as the final assignment for Coding Factory.
 
+## Overview
+
+This web application allows each user to maintain their own list of projects. After logging in, you can create new projects, edit existing ones inline, and remove them when they're done. Every action is authenticated with JWT tokens so that users only see and modify their own data stored in MongoDB.
+
 ## 🔧 Tech Stack
 
 - **Frontend:** Angular (Standalone components), Bootstrap 5
