@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Project } from '../models/project.model';
-import { AuthService } from './auth.service'; // ✅ Import this
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class ProjectService {
 
   constructor(
     private http: HttpClient,
-    private authService: AuthService // ✅ Inject it here
+    private authService: AuthService
   ) {}
 
   getProjects(): Observable<Project[]> {
