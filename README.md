@@ -76,3 +76,4 @@ frontend/
 
 Created by **Dimitris Anagnostopoulos**  
 Coding Factory – Final Full-Stack Project
+
