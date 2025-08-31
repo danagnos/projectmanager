@@ -1,83 +1,84 @@
 # Project Management App 🗂️
 
-A full-stack project for managing projects. Developed as the final assignment for Coding Factory.
+A small full‑stack app for managing your projects. Each user signs in and sees only their own list. Built as my Coding Factory final project.
 
-## Overview
+## Tech Stack
 
-This web application allows each user to maintain their own list of projects. After logging in, you can create new projects, edit existing ones inline, and remove them when they're done. Every action is authenticated with JWT tokens so that users only see and modify their own data stored in MongoDB.
+* **Frontend:** Angular (standalone components), Bootstrap 5
+* **Backend:** Node.js, Express
+* **Database:** MongoDB (Mongoose)
+* **Auth:** JWT, BCrypt
 
-## 🔧 Tech Stack
+## Features
 
-- **Frontend:** Angular (Standalone components), Bootstrap 5
-- **Backend:** Node.js, Express, MongoDB, Mongoose
-- **Authentication:** JWT (Token-based), BCrypt
+### Authentication
 
-## 📦 Features
+* Login with email and password (hashed)
+* JWT stored in the browser
+* Auth‑guarded routes in Angular
 
-### ✅ Authentication
-- Secure Login with hashed passwords
-- JWT token issued and stored in browser
-- AuthGuard-protected routes (Angular)
+### Project CRUD
 
-### ✅ Project CRUD
-- Create, View, Update, Delete Projects
-- Each project is linked to the logged-in user
-- Inline editing and real-time updates
+* Create, view, edit (inline), delete
+* Each project belongs to the logged‑in user
+* Real‑time feel with instant UI updates
 
-### ✅ Frontend
-- Angular SPA using standalone components
-- Bootstrap UI (responsive)
-- Protected routes, navigation with role-based view
-- LocalStorage for token management
+### Frontend
 
-### ✅ Backend
-- RESTful API with full CRUD support
-- Express routing + Mongoose models
-- Token verification middleware (`auth.middleware.js`)
-- Validation and error handling
+* Angular SPA with standalone components
+* Responsive Bootstrap UI
+* Simple navigation; role‑aware views
 
-## 🔐 Access Control
+### Backend
 
-All project data is tied to the authenticated user. Only the owner can access, update, or delete their projects.
+* REST API with Express + Mongoose
+* Token verification middleware (`auth.middleware.js`)
+* Validation and error handling
 
-## 🚀 Getting Started
+## Access Control
 
-### 1. Backend
+Only the owner of a project can see, update, or delete it. Ownership is checked on every request.
+
+## Getting Started
+
+### 1) Backend
+
 ```bash
 cd backend
 npm install
-cp .env   # Add JWT_SECRET and Mongo URI
+cp .env.example .env   # set JWT_SECRET and MongoDB URI
 npm run dev
 ```
 
-### 2. Frontend
+### 2) Frontend
+
 ```bash
 cd frontend
 npm install
 ng serve
 ```
 
-## 🧪 Testing
+## Testing
 
-Tested with Postman (backend) and browser (frontend). Errors and edge cases handled (e.g., invalid login, empty project title, etc.)
+Use Postman for the API and your browser for the UI. Common errors (wrong login, empty title, invalid id) return clear messages.
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 backend/
-  └── controllers/
-  └── models/
-  └── routes/
-  └── middleware/
+  controllers/
+  models/
+  routes/
+  middleware/
 frontend/
-  └── app/
-      └── components/
-      └── services/
-      └── guards/
+  app/
+    components/
+    services/
+    guards/
 ```
 
-## 👨‍🎓 Project Author
+## Author
 
-Created by **Dimitris Anagnostopoulos**  
-Coding Factory – Final Full-Stack Project
+Created by **Dimitris Anagnostopoulos**
 
+Coding Factory – Final Full‑Stack Project
